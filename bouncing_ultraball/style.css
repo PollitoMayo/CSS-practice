@@ -1,0 +1,178 @@
+:root {
+  --ultraball-white: #ffffff;
+  --ultraball-yellow: #f6e097;
+  --ultraball-lines: #58514e;
+  --ultraball-black: #58514e;
+  --background: #6cb4ab;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.container {
+  height: 30em;
+  width: 30em;
+  border: 2px solid var(--ultraball-white);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.ball-base {
+  width: 15em;
+  height: 15em;
+  border: 1em solid var(--ultraball-lines);
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 1;
+  animation: bounce 3s linear infinite;
+}
+
+.lines {
+  height: 1.5em;
+  width: 100%;
+  background-color: var(--ultraball-lines);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.button {
+  background-color: var(--ultraball-lines);
+  border-radius: 50%;
+  width: 4.5em;
+  height: 4.5em;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.button::before {
+  content: "";
+  background-color: var(--ultraball-white);
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.button::after {
+  content: "";
+  background-color: var(--ultraball-white);
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: pokeballBlink 3s linear infinite;
+}
+
+.ultraball {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--ultraball-black) 50%,
+    var(--ultraball-white) 50%
+  );
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  overflow: hidden;
+  animation: bounce 3s linear infinite;
+}
+
+.ultraball::before {
+  content: "";
+  width: 9em;
+  height: 6em;
+  border-radius: 50% 50% 0 0;
+  background-color: var(--ultraball-yellow);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 1em;
+}
+
+.ultraball::after {
+  content: "";
+  width: 5em;
+  height: 4.5em;
+  border-radius: 50% 50% 0em 0em;
+  background-color: var(--ultraball-black);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 3em;
+}
+
+@keyframes pokeballBlink {
+  0%,
+  10%,
+  25%,
+  35%,
+  60%,
+  85%,
+  100% {
+    background-color: var(--ultraball-white);
+  }
+  15%, 40%, 70% {
+    background-color: var(--ultraball-yellow);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-150%);
+  }
+  10%,
+  85% {
+    transform: translateY(25%);
+  }
+  15% {
+    transform: translateY(-25%);
+  }
+  25%,
+  30%,
+  55%,
+  80% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  45% {
+    transform: rotate(45deg) translateX(15%) translateY(-5%);
+  }
+  70% {
+    transform: rotate(-45deg) translateX(-15%) translateY(-5%);
+  }
+}
