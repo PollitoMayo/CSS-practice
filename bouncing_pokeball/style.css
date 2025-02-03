@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #6cb4ab;
+}
+
+.container {
+  height: 30em;
+  width: 30em;
+  border: 2px solid white;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.pokeball {
+  width: 15em;
+  height: 15em;
+  border: 1em solid white;
+  position: absolute;
+  border-radius: 50%;
+  top:25%;
+  left: 25%;
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    10%, 85% {
+        transform: translateY(25%);
+    }
+    25% {
+        transform: translateY(12%);
+    }
+    15%, 30%, 55%, 80% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    45% {
+        transform: rotate(45deg) translateX(15%) translateY(-5%);
+    }
+    70% {
+        transform: rotate(-45deg) translateX(-15%) translateY(-5%);
+    }
+}
+
+.pokeball::before {
+  content: "";
+  border: 0.5em solid white;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pokeball::after {
+  content: "";
+  border: 0.25em solid white;
+  background-color: white;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pokeball .lines {
+    position: absolute;
+    background-color: white;
+    height: 1em;
+    width: 4.5em;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    box-shadow: 8.5em 0 0 white;
+}
+
+.pokeball .lines::after {
+    content:"";
+    position: absolute;
+    background-color: white;
+    height: 0.25em;
+    width: 4.5em;
+    margin: auto;
+    bottom: 0;
+    z-index: -1;
+    box-shadow: 8.5em 0 0 white;
+}
+
+.pokeball .lines::before {
+    content:"";
+    position: absolute;
+    background-color: white;
+    height: 0.25em;
+    width: 4.5em;
+    margin: auto;
+    top: 0;
+    z-index: -1;
+    box-shadow: 8.5em 0 0 white;
+}
+
